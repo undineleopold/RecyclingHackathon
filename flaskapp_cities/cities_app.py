@@ -39,7 +39,8 @@ def query_db(con, city: str, partial:str ):
 #index page functionality
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('home.html')
+    #note: Calgary has no entries in the db yet
+    return render_template('home.html', cities=["Boston","Calgary","Toronto"])
 
 #handle inputs on index page
 @app.route('/handle_data', methods=['POST'])

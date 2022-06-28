@@ -4,7 +4,6 @@
 <body>
 
 <h1>Recycling in {{city}}</h1>
-
 <form action="{{url_for('search', city=city)}}" method="post" autocomplete="off">
     <label for="search">Search item</label><br>
     <input id="autocomplete" type="text" name="search" list="materials">
