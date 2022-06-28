@@ -1,0 +1,3 @@
+# RecyclingHackathon
+
+Hackathon for WWC
