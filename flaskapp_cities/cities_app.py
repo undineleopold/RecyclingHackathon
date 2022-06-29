@@ -24,15 +24,18 @@ def matlist_db(con, city:str):
 #function querying the database on city data and a partial string
 def query_db(con, city: str, partial:str):
     #partial should be escaped already
-    if partial[-1]==u"\u2063": #user selected from suggestions with invisible separator
-        #exact match (case insensitive) after removing invisible character
-        sql='''SELECT * FROM waste_table WHERE city=? AND material LIKE ?'''
-        args=(city, partial[:-1])#should be safe according to https://bobby-tables.com/python, I think
+    if partial=='': #make sure there is at least one character
+        answer=None
     else:
-        #substring matching
-        sql='''SELECT * FROM waste_table WHERE city=? AND material LIKE ?'''
-        args=(city,"%"+partial+"%")
-    answer=con.execute(sql,args).fetchone()#return just the first match
+        if partial[-1]==u"\u2063": #user selected from suggestions with invisible separator
+            #exact match (case insensitive) after removing invisible character
+            sql='''SELECT * FROM waste_table WHERE city=? AND material LIKE ?'''
+            args=(city, partial[:-1])#should be safe according to https://bobby-tables.com/python, I think
+        else:
+            #substring matching
+            sql='''SELECT * FROM waste_table WHERE city=? AND material LIKE ?'''
+            args=(city,"%"+partial+"%")
+        answer=con.execute(sql,args).fetchone()#return just the first match
     if answer is not None:
         result={'material':answer['material'], 'category':answer['category'], 'instructions':Markup(answer['instructions']).unescape()}
     else:
