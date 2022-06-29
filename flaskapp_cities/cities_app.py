@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask,render_template,request,url_for,redirect,escape
+from flask import Flask,g,render_template,request,url_for,redirect,escape
 from markupsafe import Markup
 
 #create a new Flask application
@@ -11,18 +11,31 @@ app = Flask(__name__)
 
 #function connecting to the database
 def get_db_con():
-    con=sqlite3.connect('cities.db')
-    con.row_factory=sqlite3.Row #is that the same as a cursor?
-    return con
+    if 'db' not in g: #create database connection if not in application context
+                      #store in g object, this avoids passing the connection as
+                      #argument between functions in the same context
+        g.db=sqlite3.connect('cities.db')
+        g.db.row_factory=sqlite3.Row #is that the same as a cursor?
+    return g.db
+
+#what happens when request/app context is done
+@app.teardown_appcontext
+def close_db(e): #why does this function need an argument?
+    db=g.pop('db',None) #remove from g object if present
+    if db is not None:
+        db.close() #close the database connection
 
 #function querying the database on all materials in the city's list
-def matlist_db(con, city:str):
+def matlist_db(city:str):
+    con=get_db_con()
     sql='''SELECT material FROM waste_table WHERE city=?'''
     args=(city,)
     return con.execute(sql,args).fetchall()
 
 #function querying the database on city data and a partial string
-def query_db(con, city: str, partial:str):
+def query_db(city: str, partial:str):
+    con=get_db_con() #typically, we call matlist_db() first, so the connection
+                     #is already open
     #partial should be escaped already
     if partial=='': #make sure there is at least one character
         answer=None
@@ -62,13 +75,12 @@ def handle_data():
         return render_template('questions.html', city=city)
 
 #handle redirect to wizard and wizard inputs for city
-@app.route('/search/<city>', methods=['POST','GET']) #add GET method allows direct navigation to here
+@app.route('/search/<city>', methods=['POST','GET']) #GET method allows direct navigation to here
 def search(city):
-   con=get_db_con() #when does this close? can the connection be reused, look into flask g object
-   citylist=matlist_db(con,city)
+   citylist=matlist_db(city) #after each request is finished, the db connection is closed
    if request.method=='POST': #form has been submitted
        partial=escape(request.form['search'])#I think flask escapes automatically
-       result=query_db(con,city,partial)
+       result=query_db(city,partial) #look into SQLalchemy for extensive query functionality
    else:
        result=None
    return render_template('wizard.html', city=city, citylist=citylist, result=result)
