@@ -1,5 +1,6 @@
 import sqlite3
 import json
+from markupsafe import Markup
 
 '''commenting out functionality depending on Python flask'''
 #function connecting to the database
@@ -47,7 +48,8 @@ def matlist_db(city:str):
     #note: when using flask jsonify, it returns a Response object instead
     #with content-type header 'application/json' which may be more useful
     #for the frontend?
-    return json.dumps(con.execute(sql,args).fetchall()) #what happens for None?
+    #return json.dumps([tuple(row) for row in con.execute(sql,args).fetchall()])
+    return con.execute(sql,args).fetchall()
 
 #function querying the database on city data and a partial string
 def query_db(city: str, partial:str):
@@ -70,4 +72,5 @@ def query_db(city: str, partial:str):
         result={'material':answer['material'], 'category':answer['category'], 'instructions':Markup(answer['instructions']).unescape()}
     else:
         result=None
-    return json.dumps(result) #what happens for None?
+    #return json.dumps(result)
+    return result
