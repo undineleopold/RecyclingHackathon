@@ -15,7 +15,8 @@ def get_db_con():
                       #store in g object, this avoids passing the connection as
                       #argument between functions in the same context
         g.db=sqlite3.connect('cities.db')
-        g.db.row_factory=sqlite3.Row #is that the same as a cursor?
+        g.db.row_factory=sqlite3.Row #tells the connection to return rows that
+                                     #behave like dicts
     return g.db
 
 #what happens when request/app context is done
