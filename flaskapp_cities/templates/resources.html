@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<body>
+
+{% block header %}
 
 <h1>Recycling in {{city[2]}}</h1>
+{% endblock %}
+
+
+{% block content %}
 Do you have questions? Consult your city's website at ...<br>
 For hard-to-recycle items, check out these resources:<br>
-</body>
-</html>
+{% endblock %}

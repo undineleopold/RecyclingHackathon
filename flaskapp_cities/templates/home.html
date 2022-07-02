@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<body>
+
+{% block header %}
 <h1>Recycling Helper</h1>
+
+{% endblock %}
+
+
+{% block content %}
 <p>Welcome!</p><br>
+
 
 <form action="{{ url_for('handle_data') }}" method="post">
     <label for="city">Please choose your city!</label><br>
@@ -20,6 +26,4 @@
     <input type="submit" value="Submit">
 </form>
 
-
-</body>
-</html>
+{% endblock %}

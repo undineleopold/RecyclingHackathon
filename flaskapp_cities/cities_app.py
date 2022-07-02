@@ -95,7 +95,10 @@ def resources(city_id):
    city=get_city_db(city_id)
    return render_template('resources.html', city=city)
 
-    
+#About page
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
 
 #handle redirect to wizard and wizard inputs for city
 @app.route('/search/<city_id>', methods=['POST','GET']) #GET method allows direct navigation to here
