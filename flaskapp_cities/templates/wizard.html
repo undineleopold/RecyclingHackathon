@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<body>
 
+{% block header %}
 <h1>Recycling in {{city[2]}}</h1>
+{% endblock %}
+
+
+{% block content %}
 <form action="{{url_for('search', city_id=city[0])}}" method="post" autocomplete="off">
     <label for="search">Search item</label><br>
     <input id="autocomplete" type="text" name="search" list="materials">
@@ -19,5 +22,4 @@
 <h2>{{result['category']}}</h2>
 <p>{{result['instructions']|safe}}</p>
 
-</body>
-</html>
+{% endblock %}
