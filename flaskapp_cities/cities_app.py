@@ -87,7 +87,15 @@ def handle_data():
     if action=="wizard":
         return redirect(url_for('search', city_id=city_id))
     else:
-        return render_template('questions.html', city_id=city_id)
+        return redirect(url_for('resources', city_id=city_id))
+
+#handle redirect to resources page for city
+@app.route('/resources/<city_id>', methods=['GET'])
+def resources(city_id):
+   city=get_city_db(city_id)
+   return render_template('resources.html', city=city)
+
+    
 
 #handle redirect to wizard and wizard inputs for city
 @app.route('/search/<city_id>', methods=['POST','GET']) #GET method allows direct navigation to here
