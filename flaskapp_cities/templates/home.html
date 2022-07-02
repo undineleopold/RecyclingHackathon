@@ -7,9 +7,9 @@
 
 <form action="{{ url_for('handle_data') }}" method="post">
     <label for="city">Please choose your city!</label><br>
-    <select name="city" id="city"><br><br>
+    <select name="city_id" id="city_id"><br><br>
         {% for city in cities%}
-            <option value={{city}}>{{city}}</option>
+            <option value={{city[0]}}>{{city[3]}}</option>
         {% endfor %}
     </select><br><br>
     <label for="action">I want to ...</label><br>
