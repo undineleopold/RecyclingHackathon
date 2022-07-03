@@ -1,4 +1,100 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>This is the about page</h1>
+<h1>About</h1>
+
+<div class="about">
+    <p>Individual’s faces recycling decisions every day. The decisions are particularly challenging when individuals visit to new cities where local waste management rule might be different from one another. In 2020, the world generated 2.24 billion tonnes of solid waste; the equivelent of 0.79 kilograms per person per day.  
+    </p>
+
+    <p>With rapid growth and increased mobility of the population, the global waste is expected to increase by 73% per annum and reaches to 3.88 billion tonnes in 2050. As  80 % of the waste were not recycled, we believed that by supporting individuals making recycling decisions we can reduce the waste.</p>
+
+
+    <a href="{{ url_for('resources') }}">Learn More</a>
+
+    <div class="container">
+        <div class="row">
+            <div class="heading-title text-center">
+                <h3 class="text-uppercase">Meet the Team</h3>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="../static/imgs/Maggie.jpg" alt="Maggie" class="img-responsive">
+                    </div>
+                    <div class="team-hover">
+                        <div class="s-link">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-title">
+                    <h5>Maggie Yun</h5>
+                    <span>Product manager, Toronto</span>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="../static/imgs/Maryam.jpg" alt="Maryam" class="img-responsive">
+                    </div>
+                    <div class="team-hover">
+                        <div class="s-link">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-title">
+                    <h5>Maryam Almetnawy</h5>
+                    <span>Dubai</span>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="../static/imgs/Undine.jpg" alt="Undine" class="img-responsive">
+                    </div>
+                    <div class="team-hover">
+                        <div class="s-link">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-title">
+                    <h5>Undine Leopold</h5>
+                    <span>Back-end developer, Boston</span>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="../static/imgs/Nashmeyah.jpg" alt="Nashmeyah" class="img-responsive">
+                    </div>
+                    <div class="team-hover">
+                        <div class="s-link">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-title">
+                    <h5>Nashmeyah Al Rekabi</h5>
+                    <span>Software engineer, Utah</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 {% endblock %}

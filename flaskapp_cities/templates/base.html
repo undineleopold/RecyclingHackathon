@@ -1,15 +1,34 @@
-<!doctype html>
-<title>{% block title %}{% endblock %}Recycle Ninja</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-  <h1><a href="{{ url_for('index') }}">Ninja</a></h1>
-  <h1><a href="{{ url_for('about') }}">About</a></h1>
-  <h1><a href="{{ url_for('analysis') }}">Analysis</a></h1>
-  <h1><a href="{{ url_for('resources') }}">Resources</a></h1>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% block content %}{% endblock %}
-</section>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}{% endblock %}Recycle Ninja</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+  <body>
+
+    <nav>
+      <h1><a href="{{ url_for('index') }}">Ninja</a></h1>
+      <h1><a href="{{ url_for('about') }}">About</a></h1>
+      <h1><a href="{{ url_for('analysis') }}">Analysis</a></h1>
+      <h1><a href="{{ url_for('resources') }}">Resources</a></h1>
+    </nav>
+
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% block content %}{% endblock %}
+    </section>
+  </body>
+</html>
+
+
+
+
+
