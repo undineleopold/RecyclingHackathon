@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>{% block title %}{% endblock %}Recycle Ninja</title>
+    <title>Recycle Ninja</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   
@@ -11,19 +11,22 @@
 
   <body>
 
-    <nav>
-      <h1><a href="{{ url_for('index') }}">Ninja</a></h1>
-      <h1><a href="{{ url_for('about') }}">About</a></h1>
-      <h1><a href="{{ url_for('analysis') }}">Analysis</a></h1>
-      <h1><a href="{{ url_for('resources') }}">Resources</a></h1>
-    </nav>
+    <header>
+      
+      <nav>
+        <h1><a href="{{ url_for('index') }}">Ninja</a></h1>
+        <h1><a href="{{ url_for('about') }}">About</a></h1>
+        <h1><a href="{{ url_for('analysis') }}">Analysis</a></h1>
+        <h1><a href="{{ url_for('resources') }}">Resources</a></h1>
+      </nav>
+
+    </header>
+    
 
     <section class="content">
-      <header>
-        {% block header %}{% endblock %}
-      </header>
-      {% block content %}{% endblock %}
+      
     </section>
+
   </body>
 </html>
 
