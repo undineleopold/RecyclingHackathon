@@ -83,11 +83,11 @@ def index():
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
     city_id = request.form['city_id']
-    action= request.form['action']
-    if action=="wizard":
-        return redirect(url_for('search', city_id=city_id))
-    else:
-        return redirect(url_for('resources', city_id=city_id))
+    # action= request.form['action']
+    # if action=="wizard":
+    return redirect(url_for('search', city_id=city_id))
+    # else:
+        # return redirect(url_for('resources', city_id=city_id))
 
 #handle redirect to resources page for city
 @app.route('/resources', methods=['GET'])
