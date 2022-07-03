@@ -76,7 +76,7 @@ nav{
   align-items: center;
 }
 .ninja{
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   background: #F4F4F4;
   width: 70vw;

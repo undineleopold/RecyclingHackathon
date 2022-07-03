@@ -2,7 +2,7 @@
 
 
 {% block header %}
-<h1>Recycling in {{city[2]}}</h1>
+
 {% endblock %}
 
 
@@ -10,6 +10,7 @@
 <div class="center-content">
     <div class="ninja-wizard">
         <div class="ninja">
+            <h1>Recycling in {{city[2]}}</h1>
             <form action="{{url_for('search', city_id=city[0])}}" method="post" autocomplete="off">
                 <label for="search">Look up item</label><br>
                 <input id="autocomplete" type="text" name="search" list="materials">
