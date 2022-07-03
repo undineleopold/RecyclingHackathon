@@ -1,35 +1,93 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %} -->
 
+<!DOCTYPE html>
 
-{% block header %}
-<header> 
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Recycle Ninja</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+  </head>
+
+  <body>
+
+    <header>
+        <img src="../static/imgs/76254.jpg" width="150" height="150">
+        <h1>Recycle Ninja</h1> 
+
+      <nav>
+        <h1><a href="{{ url_for('index') }}">Ninja</a></h1>
+        <h1><a href="{{ url_for('about') }}">About</a></h1>
+        <h1><a href="{{ url_for('analysis') }}">Analysis</a></h1>
+        <h1><a href="{{ url_for('resources') }}">Resources</a></h1>
+      </nav>
+
+    </header>
+    
+
+    <div class="content">
+        <p>Recycle Ninja is a recycling assistant web application that recommends the best recycling option for users base on their location and the garbage at hand. </p>
+
+        <div class="form">
+            <form action="{{ url_for('handle_data') }}" method="post">
+                <label for="city">Please choose your city!</label><br>
+                <select name="city_id" id="city_id"><br><br>
+                    {% for city in cities%}
+                        <option value={{city[0]}}>{{city[3]}}</option>
+                    {% endfor %}
+                </select><br><br>
+                <!-- <label for="action">I want to ...</label><br>
+                <select name="action" id="action"><br><br>
+                    <option value="wizard">look up items</option>
+                    <option value="questions">get help</option>
+                </select><br><br> -->
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <img src="../static/imgs/6608.jpg"  width="250" height="200">
+    </div>
+
+  </body>
+  
+</html>
+
+<!-- {% block header %}
+
     <img src="../static/imgs/76254.jpg" width="150" height="150">
     <h1>Recycle Ninja</h1> 
-</header>
 
+{% endblock %} -->
 
-{% endblock %}
-
-
+<!-- 
 {% block content %}
 <p>Recycle Ninja is a recycling assistant web application that recommends the best recycling option for users base on their location and the garbage at hand. 
 
-</p><br>
+
+</p><br> -->
 
 
-<form action="{{ url_for('handle_data') }}" method="post">
+<!-- <form action="{{ url_for('handle_data') }}" method="post">
     <label for="city">Please choose your city!</label><br>
     <select name="city_id" id="city_id"><br><br>
         {% for city in cities%}
             <option value={{city[0]}}>{{city[3]}}</option>
         {% endfor %}
     </select><br><br>
-    <!-- <label for="action">I want to ...</label><br>
+    <label for="action">I want to ...</label><br>
     <select name="action" id="action"><br><br>
         <option value="wizard">look up items</option>
         <option value="questions">get help</option>
-    </select><br><br> -->
+    </select><br><br>
     <input type="submit" value="Submit">
-</form>
+</form> -->
+<div>
+    <img src="../static/imgs/6608.jpg"  width="250" height="200">
+</div>
 
-{% endblock %}
+<!-- {% endblock %} -->
