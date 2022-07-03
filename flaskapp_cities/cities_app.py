@@ -90,15 +90,24 @@ def handle_data():
         return redirect(url_for('resources', city_id=city_id))
 
 #handle redirect to resources page for city
-@app.route('/resources/<city_id>', methods=['GET'])
+@app.route('/resources', methods=['GET'])
 def resources(city_id):
-   city=get_city_db(city_id)
-   return render_template('resources.html', city=city)
+#    city=get_city_db(city_id)
+   return render_template('resources.html')
 
 #About page
 @app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html')
+    
+#Analysis page
+@app.route('/analysis', methods=['GET'])
+def analysis():
+    return render_template('analysis.html')
+
+# @app.route('/resources', methods=['GET'])
+# def resources():
+#     return render_template('resources.html')
 
 #handle redirect to wizard and wizard inputs for city
 @app.route('/search/<city_id>', methods=['POST','GET']) #GET method allows direct navigation to here

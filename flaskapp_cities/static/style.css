@@ -1,15 +1,18 @@
+*{
+  padding: 0;
+  border: 0;
+}
 html {
-  font-family: sans-serif;
-  background: darkseagreen;
-  padding: 1rem;
+  /* font-family: sans-serif; */
+  background: #ffffff;
+  display: flex;
 }
 
 body {
-  max-width: 780px;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
-  border-radius: 25px;
-  border: 2px solid darkslategray;
-  background: mintcream;
+  background: #F4F4F4;
 }
 
 h1, h2, h3, h4, h5, h6 {
