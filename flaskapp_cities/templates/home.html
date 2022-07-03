@@ -2,13 +2,19 @@
 
 
 {% block header %}
-<h1>Recycling Helper</h1>
+<header> 
+    <img src="../static/imgs/76254.jpg" width="150" height="150">
+    <h1>Recycle Ninja</h1> 
+</header>
+
 
 {% endblock %}
 
 
 {% block content %}
-<p>Welcome!</p><br>
+<p>Recycle Ninja is a recycling assistant web application that recommends the best recycling option for users base on their location and the garbage at hand. 
+
+</p><br>
 
 
 <form action="{{ url_for('handle_data') }}" method="post">
@@ -18,11 +24,11 @@
             <option value={{city[0]}}>{{city[3]}}</option>
         {% endfor %}
     </select><br><br>
-    <label for="action">I want to ...</label><br>
+    <!-- <label for="action">I want to ...</label><br>
     <select name="action" id="action"><br><br>
         <option value="wizard">look up items</option>
         <option value="questions">get help</option>
-    </select><br><br>
+    </select><br><br> -->
     <input type="submit" value="Submit">
 </form>
 
