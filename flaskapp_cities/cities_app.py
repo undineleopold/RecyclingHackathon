@@ -91,7 +91,7 @@ def handle_data():
 
 #handle redirect to resources page for city
 @app.route('/resources', methods=['GET'])
-def resources(city_id):
+def resources():
 #    city=get_city_db(city_id)
    return render_template('resources.html')
 
@@ -99,7 +99,7 @@ def resources(city_id):
 @app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html')
-    
+
 #Analysis page
 @app.route('/analysis', methods=['GET'])
 def analysis():
