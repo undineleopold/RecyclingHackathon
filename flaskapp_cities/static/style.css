@@ -66,7 +66,7 @@ nav{
 }
 
 .center-content .ninja{
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
@@ -76,11 +76,20 @@ nav{
   align-items: center;
 }
 .ninja{
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   background: #F4F4F4;
   width: 70vw;
   height: 50vh;
+  padding: 20px;
+}
+.ninja h1{
+  padding: 20px;
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 3px;
+
 }
 label{
   font-family: 'Bebas Neue', cursive;
