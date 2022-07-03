@@ -1,20 +1,83 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=BenchNine:wght@400&display=swap');
 *{
   padding: 0;
-  border: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 
 html {
   background: #ffffff;
-  display: flex;
+  
 }
 
 body {
-  /* display: flex; */
-  /* justify-content: center; */
-  margin: 0 auto;
-  background: #F4F4F4;
+  /* background: #F4F4F4; */
   font-family: 'Source Sans Pro', sans-serif;
+  background:url(../static/imgs/6608.jpg) no-repeat bottom right;
+  background-size: 750px 550px;
+  height: 100vh;
 }
 
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.logo{
+  letter-spacing: 2px;
+  font-size: 36px;
+}
+.logo img{
+  align-items: center;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+}
+
+.nav-links li{
+ list-style: none;
+}
+
+.nav-links a{
+  color: #E03168;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+.nav-links a.current {
+  background-color: yellow;
+}
+
+
+.main-text{
+  text-align: center;
+  font-family: 'BenchNine', sans-serif;
+  font-size: 35px;
+  padding: 35px;
+}
+
+.center-content .ninja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ninja-wizard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ninja{
+  display: flex;
+  justify-content: center;
+  background: #F4F4F4;
+  width: 70vw
+}
