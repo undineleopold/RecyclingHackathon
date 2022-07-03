@@ -7,19 +7,32 @@
 
 
 {% block content %}
-<form action="{{url_for('search', city_id=city[0])}}" method="post" autocomplete="off">
-    <label for="search">Look up item</label><br>
-    <input id="autocomplete" type="text" name="search" list="materials">
-    <input type="submit" value="Submit">
-    <datalist id="materials">
-        {% for material in citylist%}
-            <option>{{material[0]}}&#8291;</option>
-        {% endfor %}
-    </datalist>
-</form>
+<div class="center-content">
+    <div class="ninja-wizard">
+        <div class="ninja">
+            <form action="{{url_for('search', city_id=city[0])}}" method="post" autocomplete="off">
+                <label for="search">Look up item</label><br>
+                <input id="autocomplete" type="text" name="search" list="materials">
+                <div class="btn">
+                    <input type="submit" value="Submit">
+                </div>
+                <datalist id="materials">
+                    {% for material in citylist%}
+                        <option>{{material[0]}}&#8291;</option>
+                    {% endfor %}
+                </datalist>
+            </form>
+            
+            <div class="results">
+                <h1>{{result['material']}}</h1>
+                <h2>{{result['category']}}</h2>
+                <p>{{result['instructions']|safe}}</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
-<h1>{{result['material']}}</h1>
-<h2>{{result['category']}}</h2>
-<p>{{result['instructions']|safe}}</p>
+
 
 {% endblock %}

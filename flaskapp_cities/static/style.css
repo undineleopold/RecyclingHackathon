@@ -204,7 +204,7 @@ label{
   width: 160px;
   height: auto;
   border-radius: 100%;
-  border: 20px solid #f3f4fa;
+  border: 20px solid #F5A641;
 }
 
 .team .team-content{
@@ -326,4 +326,39 @@ margin-bottom: 0;
       max-width: 1140px;
   }
  
+}
+
+
+.resources-content{
+  display: flex;
+  margin: 0 30px;
+
+}
+.database-resource h1{
+  justify-content: center;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+}
+
+.database-resource {
+  font-family: 'BenchNine', sans-serif;
+  font-size: 20px;
+  
+
+  
+}
+.database-resource p {
+  padding:  10px 0;
+  
+}
+.analysis-resource h1{
+  justify-content: center;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+}
+
+.analysis-resource {
+  font-family: 'BenchNine', sans-serif;
+  font-size: 20px;
+
 }
