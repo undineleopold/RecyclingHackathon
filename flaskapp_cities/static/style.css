@@ -156,6 +156,8 @@ label{
 }
 .section-title h1{
   display: inline-block;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 3px;
   font-size: 35px;
   text-transform: uppercase;
   font-weight: 700;
