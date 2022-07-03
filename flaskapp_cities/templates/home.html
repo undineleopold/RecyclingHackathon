@@ -35,13 +35,16 @@
         <div class="ninja-wizard">
             <div class="ninja">
                 <form action="{{ url_for('handle_data') }}" method="post">
-                    <label for="city">Please choose your city!</label><br>
+                    <label for="city">choose your city!</label><br>
                     <select name="city_id" id="city_id"><br><br>
                         {% for city in cities%}
                             <option value={{city[0]}}>{{city[3]}}</option>
                         {% endfor %}
                     </select><br><br>
-                    <input type="submit" value="Submit">
+                    <div class="btn">
+                        <input type="submit" value="Next">
+                    </div>
+                    
                 </form>
             </div>
         </div>

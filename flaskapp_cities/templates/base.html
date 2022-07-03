@@ -25,7 +25,11 @@
           <li><a href="{{ url_for('resources') }}">Resources</a></li>
       </ul>
     </nav>
-    
+
+     <div class="center-content">
+        <div class="main-text">
+          {% block maintext %}{% endblock %}
+        </div>
 
     <section class="content">
       {% block header %}{% endblock %}
