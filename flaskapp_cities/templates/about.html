@@ -1,97 +1,101 @@
 {% extends 'base.html' %}
-{% block content %}
-<h1>About</h1>
+
+{% block pagetitle %}About{% endblock %}
 
 <div class="about">
+    {% block maintext %}
     <p>Individual’s faces recycling decisions every day. The decisions are particularly challenging when individuals visit to new cities where local waste management rule might be different from one another. In 2020, the world generated 2.24 billion tonnes of solid waste; the equivelent of 0.79 kilograms per person per day.  
     </p>
 
-    <p>With rapid growth and increased mobility of the population, the global waste is expected to increase by 73% per annum and reaches to 3.88 billion tonnes in 2050. As  80 % of the waste were not recycled, we believed that by supporting individuals making recycling decisions we can reduce the waste.</p>
+    <p>With rapid growth and increased mobility of the population, the global waste is expected to increase by 73% per annum and reaches to 3.88 billion tonnes in 2050. As  80 % of the waste were not recycled, we believed that by supporting individuals making recycling decisions we can reduce the waste. <a href="{{ url_for('resources') }}">Learn More</a></p>
+    {% endblock %}
 
-
-    <a href="{{ url_for('resources') }}">Learn More</a>
+    {% block content %}
+    
 
     <div class="container">
+        <div class="section-title">
+            <h1>Meet the Team</h1>
+        </div>
+
         <div class="row">
-            <div class="heading-title text-center">
-                <h3 class="text-uppercase">Meet the Team</h3>
-            </div>
 
-            <div class="col-md-4 col-sm-4">
-                <div class="team-member">
+            <div class="column">
+                <div class="team">
                     <div class="team-img">
-                        <img src="../static/imgs/Maggie.jpg" alt="Maggie" class="img-responsive">
+                        <img src="../static/imgs/Maggie.jpg" alt="Maggie">
                     </div>
-                    <div class="team-hover">
-                        <div class="s-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </div>
+                    <div class="team-content">
+                        <h2>Maggie Yun</h2>
+                        <h3>Product manager</h3>
                     </div>
-                </div>
-                <div class="team-title">
-                    <h5>Maggie Yun</h5>
-                    <span>Product manager, Toronto</span>
+                    <div class="team-social">
+                        <a href="linkedin.com/in/maggie-yun/ 
+                        " class="social-li"> <i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4">
-                <div class="team-member">
+
+            <div class="column">
+                <div class="team">
                     <div class="team-img">
-                        <img src="../static/imgs/Maryam.jpg" alt="Maryam" class="img-responsive">
+                        <img src="../static/imgs/Maryam.jpg" alt="Maryam">
                     </div>
-                    <div class="team-hover">
-                        <div class="s-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </div>
+                    <div class="team-content">
+                        <h2>Maryam Almetnawy</h2>
+                        <h3>Data Analyst</h3>
                     </div>
-                </div>
-                <div class="team-title">
-                    <h5>Maryam Almetnawy</h5>
-                    <span>Dubai</span>
+                    <div class="team-social">
+                        <a href="linkedin.com/in/maryam-almetnawy/ 
+                        " class="social-li"> <i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4">
-                <div class="team-member">
+            <div class="column">
+                <div class="team">
                     <div class="team-img">
-                        <img src="../static/imgs/Undine.jpg" alt="Undine" class="img-responsive">
+                        <img src="../static/imgs/Undine.jpg" alt="Undine">
                     </div>
-                    <div class="team-hover">
-                        <div class="s-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </div>
+                    <div class="team-content">
+                        <h2>Undine Leopold</h2>
+                        <h3>Back-end developer</h3>
                     </div>
-                </div>
-                <div class="team-title">
-                    <h5>Undine Leopold</h5>
-                    <span>Back-end developer, Boston</span>
+                    <div class="team-social">
+                        <a href="linkedin.com/in/undine-leopold-4b36a319a/ 
+                        " class="social-li"> <i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4">
-                <div class="team-member">
+            
+
+
+            <div class="column">
+                <div class="team">
                     <div class="team-img">
-                        <img src="../static/imgs/Nashmeyah.jpg" alt="Nashmeyah" class="img-responsive">
+                        <img src="../static/imgs/Nashmeyah.jpg" alt="Nashmeyah">
                     </div>
-                    <div class="team-hover">
-                        <div class="s-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </div>
+                    <div class="team-content">
+                        <h2>Nashmeyah Al Rekabi</h2>
+                        <h3>Software engineer</h3>
+                        <h4>nashalrekabi@gmail.com</h4>
                     </div>
-                </div>
-                <div class="team-title">
-                    <h5>Nashmeyah Al Rekabi</h5>
-                    <span>Software engineer, Utah</span>
+                    <div class="team-social">
+                        <a href="linkedin.com/in/nashmeyahalrekabi  
+                        " class="social-li"> <i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
+
+           
+
+            
+
+        </div>
+
+    </div>
 
         </div>
 

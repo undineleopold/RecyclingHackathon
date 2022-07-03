@@ -11,20 +11,29 @@
 
   <body>
 
-    <header>
-      
-      <nav>
-        <h1><a href="{{ url_for('index') }}">Ninja</a></h1>
-        <h1><a href="{{ url_for('about') }}">About</a></h1>
-        <h1><a href="{{ url_for('analysis') }}">Analysis</a></h1>
-        <h1><a href="{{ url_for('resources') }}">Resources</a></h1>
-      </nav>
+    <nav>
+      <div class="logo">
+          <!-- <img src="../static/imgs/76254.jpg" width="50" height="50"> -->
+          {% block pagetitle %}<p>Recycle Ninja</p>{% endblock %}
+      </div>
 
-    </header>
-    
+     
+      <ul class="nav-links">
+          <li><a href="{{ url_for('index') }}">Ninja</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('analysis') }}">Analysis</a></li>
+          <li><a href="{{ url_for('resources') }}">Resources</a></li>
+      </ul>
+    </nav>
+
+     <div class="center-content">
+        <div class="main-text">
+          {% block maintext %}{% endblock %}
+        </div>
 
     <section class="content">
-      
+      {% block header %}{% endblock %}
+      {% block content %}{% endblock %}
     </section>
 
   </body>
