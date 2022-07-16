@@ -11,7 +11,7 @@
     <div class="ninja-wizard">
         <div class="ninja">
             <h1>Recycling in {{city[2]}}</h1>
-            <form action="{{url_for('search', city_id=city[0])}}" method="post" autocomplete="off">
+            <form action="{{url_for('search', city_id=city[0])}}" method="post" autocomplete="off" class="ninja-content">
                 <label for="search">Look up item</label><br>
                 <input id="autocomplete" type="text" name="search" list="materials">
                 <div class="btn">
