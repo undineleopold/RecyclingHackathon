@@ -30,7 +30,7 @@ def close_db(e): #why does this function need an argument?
 #function querying the database on cities present
 def get_cities_db():
     con=get_db_con()
-    sql='''SELECT * FROM city_table'''
+    sql='''SELECT * FROM city_table ORDER BY city_id'''
     return con.execute(sql).fetchall()
 
 #function querying the database on city data by id
