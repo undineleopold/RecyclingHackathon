@@ -122,4 +122,4 @@ def search(city_id):
        result=None
    return render_template('wizard.html', city=city, citylist=citylist, result=result)
 
-app.run(debug=True) #tell development server to listen on all interfaces
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
