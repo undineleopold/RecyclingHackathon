@@ -2,11 +2,11 @@
 
 Hackathon for WWC
 
-We developed a recycling assistant web application that recommends the best recycling option for users based on their location and the waste at hand. At the moment, three locations are supported (Boston, USA; Edmonton, Canada; Toronto, Canada). 
+We developed a recycling assistant web application that recommends the best recycling option for users based on their location and the waste at hand. At the moment, four locations are supported (Atlanta, USA; Boston, USA; Edmonton, Canada; Toronto, Canada). 
 
 # Web app
 
-Navigate to https://recycleninja.herokuapp.com to see this project in action.
+Navigate to https://recycleninja.onrender.com to see this project in action.
 
 # Python flask app
 
