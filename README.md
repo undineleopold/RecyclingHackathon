@@ -6,7 +6,12 @@ We developed a recycling assistant web application that recommends the best recy
 
 # Web app
 
-Navigate to https://recycleninja.onrender.com to see this project in action.
+Navigate to https://recycleninja.onrender.com to see this project in action or watch the demo below.
+
+
+https://github.com/undineleopold/RecyclingHackathon/assets/79616083/13c74e6a-028c-459a-865f-8c9e69ee4580
+
+
 
 # Python flask app
 
